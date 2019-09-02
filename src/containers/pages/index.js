@@ -1,12 +1,10 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
+/*
+ * @Author: Artha Prihardana 
+ * @Date: 2019-09-02 14:04:03 
+ * @Last Modified by: Artha Prihardana
+ * @Last Modified time: 2019-09-02 16:29:02
  */
-
-import React, {Fragment} from 'react';
+import React, { Fragment } from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -27,7 +25,6 @@ import {
 const App = () => {
   return (
     <Fragment>
-      <StatusBar barStyle="dark-content" />
       <SafeAreaView>
         <ScrollView
           contentInsetAdjustmentBehavior="automatic"
@@ -69,8 +66,8 @@ const App = () => {
         </ScrollView>
       </SafeAreaView>
     </Fragment>
-  );
-};
+  )
+}
 
 const styles = StyleSheet.create({
   scrollView: {

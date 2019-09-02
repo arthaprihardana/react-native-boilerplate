@@ -2,10 +2,24 @@
   "name": "rnboilerplate",
   "version": "0.0.1",
   "private": true,
+  "engines": {
+    "react-native": ">=0.60.0",
+    "node": ">=10.16.3",
+    "npm": ">=6.9.0"
+  },
+  "author": {
+    "name": "Artha Prihardana",
+    "email": "arthaprihardana@gmail.com"
+  },
+  "repository": {
+    "url": "https://github.com/arthaprihardana/react-native-boilerplate.git",
+    "type": "git"
+  },
   "scripts": {
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "postinstall": "rndebugger-open"
   },
   "dependencies": {
     "react": "16.8.6",
@@ -19,6 +33,7 @@
     "eslint": "^6.3.0",
     "jest": "^24.9.0",
     "metro-react-native-babel-preset": "^0.56.0",
+    "react-native-debugger-open": "^0.3.22",
     "react-test-renderer": "16.8.6"
   },
   "jest": {

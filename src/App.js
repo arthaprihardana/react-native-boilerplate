@@ -7,14 +7,21 @@
  */
 
 import React, {Fragment} from 'react';
-import {
-  StyleSheet,
-  View,
-  StatusBar,
-  YellowBox
-} from 'react-native';
+import {StyleSheet, View, StatusBar, YellowBox} from 'react-native';
 import {StackViewStyleInterpolator} from 'react-navigation-stack';
-import {Scene, Router, Actions, Reducer, ActionConst, Overlay, Modal, Tabs, Drawer, Stack, Lightbox} from 'react-native-router-flux';
+import {
+  Scene,
+  Router,
+  Actions,
+  Reducer,
+  ActionConst,
+  Overlay,
+  Modal,
+  Tabs,
+  Drawer,
+  Stack,
+  Lightbox,
+} from 'react-native-router-flux';
 import {connect, Provider} from 'react-redux';
 
 import configureStore from 'src/redux/store';
@@ -32,7 +39,7 @@ const transitionConfig = () => ({
 const reducerCreate = params => {
   const defaultReducer = new Reducer(params);
   return (state, action) => {
-      return defaultReducer(state, action);
+    return defaultReducer(state, action);
   };
 };
 
@@ -46,31 +53,52 @@ let exitCount = 0;
 const onBackPress = () => {
   let route = Actions.state.routes;
   let main = route[0].routes[0].routes;
-}
+};
 
-import Home from 'src/containers/pages';
+import Welcome from 'src/containers/pages/welcome';
 
-YellowBox.ignoreWarnings(['Warning: componentWillReceiveProps is deprecated and will be removed in the next major version. Use static getDerivedStateFromProps instead.']);
+YellowBox.ignoreWarnings([
+  'Warning: componentWillReceiveProps is deprecated and will be removed in the next major version. Use static getDerivedStateFromProps instead.',
+]);
 
 const App = () => {
   return (
-    <View style={{ flex: 1 }}>
+    <View style={styles.container}>
       <StatusBar barStyle="dark-content" />
       <Provider store={store.store}>
-        <RouterWithRedux createReducer={reducerCreate} getSceneStyle={getSceneStyle} backAndroidHandler={onBackPress}>
+        <RouterWithRedux
+          createReducer={reducerCreate}
+          getSceneStyle={getSceneStyle}
+          backAndroidHandler={onBackPress}>
           <Modal key="modal" hideNavBar transitionConfig={transitionConfig}>
             <Lightbox key="lightbox">
               <Stack key="root">
-                <Scene key="main" hideNavBar type={ActionConst.RESET} panHandlers={null}>
-                  <Scene key="home" component={Home} title="Home" hideNavBar hideTabBar />
+                <Scene
+                  key="main"
+                  hideNavBar
+                  type={ActionConst.RESET}
+                  panHandlers={null}>
+                  <Scene
+                    key="welcome"
+                    component={Welcome}
+                    title="Welcome"
+                    hideNavBar
+                    hideTabBar
+                  />
                 </Scene>
               </Stack>
-            </Lightbox>  
+            </Lightbox>
           </Modal>
         </RouterWithRedux>
       </Provider>
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});
 
 export default App;

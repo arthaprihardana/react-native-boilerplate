@@ -1,16 +1,15 @@
 /*
- * @Author: Artha Prihardana 
- * @Date: 2019-09-02 14:04:03 
+ * @Author: Artha Prihardana
+ * @Date: 2019-09-02 14:04:03
  * @Last Modified by: Artha Prihardana
- * @Last Modified time: 2019-09-02 16:29:02
+ * @Last Modified time: 2019-09-10 23:51:47
  */
-import React, { Fragment } from 'react';
+import React, {Fragment} from 'react';
 import {
   SafeAreaView,
   StyleSheet,
   ScrollView,
   View,
-  Text,
   StatusBar,
 } from 'react-native';
 
@@ -21,6 +20,8 @@ import {
   DebugInstructions,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+
+import {Text} from 'src/components';
 
 const App = () => {
   return (
@@ -66,8 +67,8 @@ const App = () => {
         </ScrollView>
       </SafeAreaView>
     </Fragment>
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   scrollView: {
@@ -85,13 +86,13 @@ const styles = StyleSheet.create({
     paddingHorizontal: 24,
   },
   sectionTitle: {
-    fontSize: 24,
+    // fontSize: 24,
     fontWeight: '600',
     color: Colors.black,
   },
   sectionDescription: {
     marginTop: 8,
-    fontSize: 18,
+    // fontSize: 18,
     fontWeight: '400',
     color: Colors.dark,
   },
@@ -100,7 +101,7 @@ const styles = StyleSheet.create({
   },
   footer: {
     color: Colors.dark,
-    fontSize: 12,
+    // fontSize: 12,
     fontWeight: '600',
     padding: 4,
     paddingRight: 12,
